@@ -1,7 +1,8 @@
 # InstaCore
 
 Tooling that automates your social media interactions on Instagram implemented in .NET Core using the Selenium module.
-<p><b>This bot DO NOT use Instagram API</b>  </p>
+**This bot DO NOT use Instagram API**
+
 # Auth
  - Login
  - Proxy
