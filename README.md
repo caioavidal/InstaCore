@@ -1,5 +1,6 @@
 # InstaCore
-Instagram Bot written in C# using Selenium WebDriver
+
+Tooling that automates your social media interactions, Comments and Directs on Instagram Implemented in .NET Core using the Selenium module.
 
 # Auth
  - Login
