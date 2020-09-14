@@ -23,7 +23,7 @@ namespace InstaCore.Login
         {
             var driver = insta.Driver;
 
-            driver.OpenUrl("https://www.instagram.com", "instagram");
+            driver.OpenUrl("https://www.instagram.com", "instagram", checkPopup: false);
 
             driver.FindElement(By.Name("username"), 60)?.SendKeys(username);
 
@@ -31,28 +31,11 @@ namespace InstaCore.Login
 
             driver.FindElement(By.CssSelector("button[type=\"submit\"]"), 60).Click();
 
-            driver.FindElement(By.CssSelector("img[alt='Instagram']"), 60).Click();
+            driver.FindElement(By.CssSelector("img[alt='Instagram']"), 60);
 
-            removePopup(driver);
+            driver.OpenUrl("https://www.instagram.com", "instagram");
 
             return insta;
-        }
-
-        private static void removePopup(RemoteWebDriver driver)
-        {
-            try
-            {
-                var notificationPopup = driver.FindElements(By.XPath("//*[contains(text(),'Not Now')]"), 60);
-
-                if (notificationPopup.Count > 0)
-                {
-                    notificationPopup.FirstOrDefault().Click();
-                }
-            }
-            catch
-            {
-
-            }
         }
 
 
