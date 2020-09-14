@@ -9,14 +9,14 @@ namespace InstaCore.Proxies
 {
     public class ProxyFile
     {
-        public static void Create(string host, int port,string username, string password) 
+        public static void Create(InstaProxy proxy) 
         {
             var script = File.ReadAllText("data/background.js");
 
-            script = script.Replace("{host}", host);
-            script = script.Replace("{port}", port.ToString());
-            script = script.Replace("{username}", username);
-            script = script.Replace("{password}", password);
+            script = script.Replace("{host}", proxy.Host);
+            script = script.Replace("{port}", proxy.Port.ToString());
+            script = script.Replace("{username}", proxy.Username);
+            script = script.Replace("{password}", proxy.Password);
 
             using (FileStream zipToOpen = new FileStream(@"data/proxy.zip", FileMode.Open))
             {

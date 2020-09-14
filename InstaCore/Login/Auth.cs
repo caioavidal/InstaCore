@@ -10,17 +10,19 @@ using System.Threading.Tasks;
 
 namespace InstaCore.Login
 {
-    public class Auth
+    public static class Auth
     {
-        private readonly RemoteWebDriver driver;
-
-        public Auth(RemoteWebDriver driver)
+        /// <summary>
+        /// Log in user
+        /// </summary>
+        /// <param name="insta"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public static Insta LogIn(this Insta insta, string username, string password)
         {
-            this.driver = driver;
-        }
+            var driver = insta.Driver;
 
-        public async Task LogIn(string username, string password)
-        {
             driver.OpenUrl("https://www.instagram.com", "instagram");
 
             driver.FindElement(By.Name("username"), 60)?.SendKeys(username);
@@ -31,10 +33,12 @@ namespace InstaCore.Login
 
             driver.FindElement(By.CssSelector("img[alt='Instagram']"), 60).Click();
 
-            removePopup();
+            removePopup(driver);
+
+            return insta;
         }
 
-        private void removePopup()
+        private static void removePopup(RemoteWebDriver driver)
         {
             try
             {

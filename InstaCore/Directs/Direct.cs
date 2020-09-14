@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace InstaCore.Profiles
 {
-    public class Direct
+    public static class Direct
     {
-        private readonly RemoteWebDriver driver;
-
-        public Direct(RemoteWebDriver driver)
+        /// <summary>
+        /// Send message to a profile. If message contains any breaklines, bot will use SHIFT+ENTER in order to
+        /// send only one message
+        /// </summary>
+        /// <param name="profile"></param>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public static async Task<Insta> SendMessage(this Insta insta, string profile, string message)
         {
-            this.driver = driver;
-        }
+            var driver = insta.Driver;
 
-        public async Task SendMessage(string profile, string message)
-        {
             driver.OpenUrl("https://www.instagram.com/direct/new/", "direct");
 
             driver.Exec(() => driver.FindElement(By.Name("queryBox"), 60).SendKeys(profile), () => driver.FindElements(By.CssSelector("div[role='dialog'] div[role='button']"), 60).ElementAtOrDefault(0) != null);
@@ -44,6 +46,8 @@ namespace InstaCore.Profiles
             }
 
             driver.FindElement(By.TagName("textarea")).SendKeys(Keys.Enter);
+
+            return insta;
         }
     }
 }
