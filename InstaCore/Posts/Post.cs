@@ -114,6 +114,10 @@ namespace InstaCore.Posts
 
             foreach (var post in posts)
             {
+                if (post.FindElements(By.TagName("a")).Count == 0)
+                {
+                    continue;
+                }
                 var href = post.FindElement(By.TagName("a")).GetAttribute("href");
                 dictionary.TryAdd(href, post);
             }
