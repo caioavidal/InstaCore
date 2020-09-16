@@ -12,7 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstaCore.Collector", "InstaCore.Collector\InstaCore.Collector.csproj", "{BC97191D-6B6D-4FCA-B8D6-8B085DCF656C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstaCore", "InstaCore\InstaCore.csproj", "{881C75F3-6BE0-48A8-9361-66FB7070A4CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstaCore", "InstaCore\InstaCore.csproj", "{881C75F3-6BE0-48A8-9361-66FB7070A4CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstaCore.DirectAcessor", "InstaCore.DirectAcessor\InstaCore.DirectAcessor.csproj", "{BD5C5F9C-2F8F-4FFC-8563-1237D10FAFF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{881C75F3-6BE0-48A8-9361-66FB7070A4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{881C75F3-6BE0-48A8-9361-66FB7070A4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{881C75F3-6BE0-48A8-9361-66FB7070A4CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5C5F9C-2F8F-4FFC-8563-1237D10FAFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5C5F9C-2F8F-4FFC-8563-1237D10FAFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5C5F9C-2F8F-4FFC-8563-1237D10FAFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5C5F9C-2F8F-4FFC-8563-1237D10FAFF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

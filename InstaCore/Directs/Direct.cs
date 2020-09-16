@@ -49,5 +49,13 @@ namespace InstaCore.Profiles
 
             return insta;
         }
+        public static Insta OpenDirect(this Insta insta)
+        {
+            var driver = insta.Driver;
+
+            driver.OpenUrl("https://www.instagram.com/direct/inbox/", "direct/inbox");
+
+            return insta;
+        }
     }
 }

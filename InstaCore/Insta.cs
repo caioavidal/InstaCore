@@ -14,6 +14,7 @@ namespace InstaCore
         public Insta()
         {
             var options = new ChromeOptions();
+
             CodePagesEncodingProvider.Instance.GetEncoding(437);
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             Driver = new ChromeDriver(options);
